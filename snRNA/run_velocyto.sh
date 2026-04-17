@@ -12,10 +12,10 @@ source config/velocyto_paths.sh
 
 module load "$STAR_MODULE"
 
-SAMPLE_SHEET="config/velocyto_samples.tsv"
+SAMPLE_SHEET="config/samples.tsv"
 
 tail -n +2 "$SAMPLE_SHEET" | while IFS=$'\t' read -r sample_id stage tissue root_path fastq_dir; do
-    echo "${sample_id} STAR alignment begun:"
+    echo "${sample_id} STAR alignment and counting begun:"
     date
 
     mkdir -p "${OUT_ROOT}/${tissue}/${stage}/${sample_id}_Velocyto"
@@ -46,6 +46,6 @@ barcoded_1_R1.fastq.gz,barcoded_2_R1.fastq.gz,barcoded_3_R1.fastq.gz,barcoded_4_
         --soloUMIfiltering - \
         --soloCellFilter CellRanger2.2
 
-    echo "${sample_id} STAR alignment finished:"
+    echo "${sample_id} STAR alignment and counting finished:"
     date
 done
