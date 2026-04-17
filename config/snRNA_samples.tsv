@@ -1,29 +1,29 @@
-sample_id	stage	tissue	root_path
-CPA1E9	E9	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9
-CPA2E9	E9	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9
-HPA1E9	E9	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9
-HPA2E9	E9	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9
-CFLE9	E9	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E9
-HFLE9	E9	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E9
-CPA1E10	E10	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10
-CPA2E10	E10	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10
-HPA1E10	E10	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10
-HPA2E10	E10	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10
-CFLE10	E10	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10
-CHLE10	E10	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10
-HFLE10	E10	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10
-HHLE10	E10	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10
-CPA1E11	E11	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11
-CPA2E11	E11	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11
-HPA1E11	E11	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11
-HPA2E11	E11	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11
-CFLE11	E11	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11
-CHLE11	E11	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11
-HFLE11	E11	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11
-HHLE11	E11	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11
-CME12	E12	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E12
-HME12	E12	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E12
-CFLE12	E12	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12
-CHLE12	E12	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12
-HFLE12	E12	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12
-HHLE12	E12	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12
+sample_id	stage	tissue	root_path	fastq_dir
+CPA1E9	E9	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9/Illumina/CPA1E9/Unaligned
+CPA2E9	E9	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9/Illumina/CPA2E9/Unaligned
+HPA1E9	E9	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9/Illumina/HPA1E9/Unaligned
+HPA2E9	E9	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E9/Illumina/HPA2E9/Unaligned
+CFLE9	E9	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E9	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E9/Illumina/CFLE9/Unaligned
+HFLE9	E9	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E9	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E9/Illumina/HFLE9/Unaligned
+CPA1E10	E10	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10/Illumina/CPA1E10/Unaligned
+CPA2E10	E10	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10/Illumina/CPA2E10/Unaligned
+HPA1E10	E10	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10/Illumina/HPA1E10/Unaligned
+HPA2E10	E10	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E10/Illumina/HPA2E10/Unaligned
+CFLE10	E10	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10/Illumina/CFLE10/Unaligned
+CHLE10	E10	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10/Illumina/CHLE10/Unaligned
+HFLE10	E10	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10/Illumina/HFLE10/Unaligned
+HHLE10	E10	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E10/Illumina/HHLE10/Unaligned
+CPA1E11	E11	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11/Illumina/CPA1E11/Unaligned
+CPA2E11	E11	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11/Illumina/CPA2E11/Unaligned
+HPA1E11	E11	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11/Illumina/HPA1E11/Unaligned
+HPA2E11	E11	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E11/Illumina/HPA2E11/Unaligned
+CFLE11	E11	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11/Illumina/CFLE11/Unaligned
+CHLE11	E11	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11/Illumina/CHLE11/Unaligned
+HFLE11	E11	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11/Illumina/HFLE11/Unaligned
+HHLE11	E11	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E11/Illumina/HHLE11/Unaligned
+CME12	E12	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E12	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E12/Illumina/CME12/Unaligned
+HME12	E12	PA	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E12	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/PA/E12/Illumina/HME12/Unaligned
+CFLE12	E12	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12/Illumina/CFLE12/Unaligned
+CHLE12	E12	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12/Illumina/CHLE12/Unaligned
+HFLE12	E12	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12/Illumina/HFLE12/Unaligned
+HHLE12	E12	Limb	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12	/gpfs/gibbs/pi/noonan/yj345/snRNAseq/Limb/E12/Illumina/HHLE12/Unaligned
