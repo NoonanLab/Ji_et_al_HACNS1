@@ -14,7 +14,7 @@ module load "$STAR_MODULE"
 
 SAMPLE_SHEET="config/velocyto_samples.tsv"
 
-tail -n +2 "$SAMPLE_SHEET" | while IFS=$'\t' read -r sample_id stage tissue root_path; do
+tail -n +2 "$SAMPLE_SHEET" | while IFS=$'\t' read -r sample_id stage tissue root_path fastq_dir; do
     echo "${sample_id} STAR alignment begun:"
     date
 
