@@ -42,6 +42,14 @@ scprep.plot.scatter2d(Y_phate, figsize=(12,8), c = metadata['genotype'],
 
 adata = AnnData(X=counts, obs=metadata)
 adata.obsm["X_phate"] = Y_phate
+
+sc.pp.highly_variable_genes(adata, n_top_genes=2000)
+sc.pl.highly_variable_genes(adata)
+sc.tl.pca(adata)
+sc.pl.pca_variance_ratio(adata, n_pcs=50, log=True)
+sc.pp.neighbors(adata, use_rep='X_phate')
+sc.tl.leiden(adata, resolution=1)
+sc.pl.embedding(adata, basis='phate', color='leiden')
 adata.write("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/FL/FL_Cartilage.h5ad")
 
 projDir = '/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/'
@@ -71,6 +79,15 @@ scprep.plot.scatter2d(Y_phate, figsize=(12,8), c = metadata['genotype'],
 
 adata = AnnData(X=counts, obs=metadata)
 adata.obsm["X_phate"] = Y_phate
+
+sc.pp.highly_variable_genes(adata, n_top_genes=2000)
+sc.pl.highly_variable_genes(adata)
+sc.tl.pca(adata)
+sc.pl.pca_variance_ratio(adata, n_pcs=50, log=True)
+sc.pp.neighbors(adata, use_rep='X_phate')
+sc.tl.leiden(adata, resolution=1)
+sc.pl.embedding(adata, basis='phate', color='leiden')
+
 adata.write("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/HL_Cartilage.h5ad")
 
 projDir = '/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/'
@@ -102,5 +119,14 @@ scprep.plot.scatter2d(Y_phate, figsize=(12,8), c = metadata['tissue'],
 
 adata = AnnData(X=counts, obs=metadata)
 adata.obsm["X_phate"] = Y_phate
+
+sc.pp.highly_variable_genes(adata, n_top_genes=2000)
+sc.pl.highly_variable_genes(adata)
+sc.tl.pca(adata)
+sc.pl.pca_variance_ratio(adata, n_pcs=50, log=True)
+sc.pp.neighbors(adata, use_rep='X_phate')
+sc.tl.leiden(adata, resolution=1)
+sc.pl.embedding(adata, basis='phate', color='leiden')
+
 adata.write("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/PA_Osteoblasts.h5ad")
 
