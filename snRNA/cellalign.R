@@ -6,15 +6,15 @@ library(pheatmap)
 library(SeuratData)
 library(SeuratDisk)
 
-Convert(""/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/FL/FL_Cartilage.h5ad"", dest = "h5seurat", overwrite = TRUE)
+Convert("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/FL/FL_Cartilage.h5ad", dest = "h5seurat", overwrite = TRUE)
 FL_Cartilage <- LoadH5Seurat("FL_Cartilage.h5seurat")
 FL_Cartilage
 
-Convert(""/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/HL_Cartilage.h5ad"", dest = "h5seurat", overwrite = TRUE)
+Convert("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/HL_Cartilage.h5ad", dest = "h5seurat", overwrite = TRUE)
 HL_Cartilage <- LoadH5Seurat("HL_Cartilage.h5seurat")
 HL_Cartilage
 
-Convert(""/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/PA_Osteoblasts.h5ad"", dest = "h5seurat", overwrite = TRUE)
+Convert("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/PA_Osteoblasts.h5ad", dest = "h5seurat", overwrite = TRUE)
 PA_Osteoblasts <- LoadH5Seurat("PA_Osteoblasts.h5seurat")
 PA_Osteoblasts
 
