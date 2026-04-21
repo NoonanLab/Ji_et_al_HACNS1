@@ -1,0 +1,25 @@
+import os
+import scprep
+import phate
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+import scprep
+from PIL import Image
+from anndata import AnnData
+from pyslingshot import Slingshot
+import anndata as ad
+
+%load_ext autoreload
+%autoreload 2
+%matplotlib inline
+
+adata = ad.read_h5ad("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/FL/FL_Cartilage.h5ad")
+
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+custom_xlim = (-12, 12)
+custom_ylim = (-12, 12)
+
+slingshot = Slingshot(adata, celltype_key="leiden", obsm_key="X_phate", start_node=29, debug_level='verbose')
+slingshot.fit(num_epochs=1, debug_axes=axes)
