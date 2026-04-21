@@ -21,5 +21,134 @@ fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
 custom_xlim = (-12, 12)
 custom_ylim = (-12, 12)
 
+slingshot = Slingshot(adata, celltype_key="leiden", obsm_key="X_phate", start_node=46, debug_level='verbose')
+slingshot.fit(num_epochs=1, debug_axes=axes)
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.set_title('Slingshot Trajectory')
+slingshot.plotter.curves(ax, slingshot.curves)
+slingshot.plotter.clusters(ax, color_mode='pseudotime', s=5)
+
+curves = slingshot.curves
+
+selected_curves = [curves[4], curves[6], curves[8]] 
+
+pseudotime = slingshot.unified_pseudotime
+
+fig, ax = plt.subplots(figsize=(12, 8))
+
+slingshot.plotter.curves(ax, selected_curves)
+
+x_coords = adata.obsm["X_phate"][:, 0]
+y_coords = adata.obsm["X_phate"][:, 1]
+
+sc = ax.scatter(x_coords, y_coords, c=pseudotime, s=5, cmap="viridis")
+
+cbar = plt.colorbar(sc, ax=ax, orientation="vertical", pad=0.02)
+cbar.set_label("Pseudotime", fontsize=18)
+cbar.ax.yaxis.set_ticks_position('right')  # Move colorbar labels to the left
+cbar.ax.yaxis.set_label_position('right')  # Move colorbar label to the left
+cbar.ax.tick_params(labelsize=12)  # Increase size of pseudotime tick labels
+
+ax.set_xlabel("PHATE 1", fontsize=24)
+ax.set_ylabel("PHATE 2", fontsize=24)
+
+ax.tick_params(axis="x", labelsize=18)
+ax.tick_params(axis="y", labelsize=18)
+
+plt.show()
+
+adata.obs["slingshot_pseudotime"] = slingshot.unified_pseudotime
+adata.write("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/FL/FL_Cartilage.h5ad")
+
+adata = ad.read_h5ad("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/HL_Cartilage.h5ad")
+
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+custom_xlim = (-12, 12)
+custom_ylim = (-12, 12)
+
 slingshot = Slingshot(adata, celltype_key="leiden", obsm_key="X_phate", start_node=29, debug_level='verbose')
 slingshot.fit(num_epochs=1, debug_axes=axes)
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.set_title('Slingshot Trajectory')
+slingshot.plotter.curves(ax, slingshot.curves)
+slingshot.plotter.clusters(ax, color_mode='pseudotime', s=5)
+
+curves = slingshot.curves
+
+selected_curves = [curves[2], curves[7], curves[10]] 
+
+pseudotime = slingshot.unified_pseudotime
+
+fig, ax = plt.subplots(figsize=(12, 8))
+
+slingshot.plotter.curves(ax, selected_curves)
+
+x_coords = adata.obsm["X_phate"][:, 0]
+y_coords = adata.obsm["X_phate"][:, 1]
+
+sc = ax.scatter(x_coords, y_coords, c=pseudotime, s=5, cmap="viridis")
+
+cbar = plt.colorbar(sc, ax=ax, orientation="vertical", pad=0.02)
+cbar.set_label("Pseudotime", fontsize=18)
+cbar.ax.yaxis.set_ticks_position('right')  # Move colorbar labels to the left
+cbar.ax.yaxis.set_label_position('right')  # Move colorbar label to the left
+cbar.ax.tick_params(labelsize=12)  # Increase size of pseudotime tick labels
+
+ax.set_xlabel("PHATE 1", fontsize=24)
+ax.set_ylabel("PHATE 2", fontsize=24)
+
+ax.tick_params(axis="x", labelsize=18)
+ax.tick_params(axis="y", labelsize=18)
+
+plt.show()
+
+adata.obs["slingshot_pseudotime"] = slingshot.unified_pseudotime
+adata.write("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/HL_Cartilage.h5ad")
+
+adata = ad.read_h5ad("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/PA_Osteoblasts.h5ad")
+
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+custom_xlim = (-12, 12)
+custom_ylim = (-12, 12)
+
+slingshot = Slingshot(adata, celltype_key="leiden", obsm_key="X_phate", start_node=26, debug_level='verbose')
+slingshot.fit(num_epochs=1, debug_axes=axes)
+
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.set_title('Slingshot Trajectory')
+slingshot.plotter.curves(ax, slingshot.curves)
+slingshot.plotter.clusters(ax, color_mode='pseudotime', s=5)
+
+curves = slingshot.curves
+
+selected_curves = [curves[4], curves[6], curves[18]] 
+
+pseudotime = slingshot.unified_pseudotime
+
+fig, ax = plt.subplots(figsize=(12, 8))
+
+slingshot.plotter.curves(ax, selected_curves)
+
+x_coords = adata.obsm["X_phate"][:, 0]
+y_coords = adata.obsm["X_phate"][:, 1]
+
+sc = ax.scatter(x_coords, y_coords, c=pseudotime, s=5, cmap="viridis")
+
+cbar = plt.colorbar(sc, ax=ax, orientation="vertical", pad=0.02)
+cbar.set_label("Pseudotime", fontsize=18)
+cbar.ax.yaxis.set_ticks_position('right')  # Move colorbar labels to the left
+cbar.ax.yaxis.set_label_position('right')  # Move colorbar label to the left
+cbar.ax.tick_params(labelsize=12)  # Increase size of pseudotime tick labels
+
+ax.set_xlabel("PHATE 1", fontsize=24)
+ax.set_ylabel("PHATE 2", fontsize=24)
+
+ax.tick_params(axis="x", labelsize=18)
+ax.tick_params(axis="y", labelsize=18)
+
+plt.show()
+
+adata.obs["slingshot_pseudotime"] = slingshot.unified_pseudotime
+adata.write("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/PA_Osteoblasts.h5ad")
