@@ -103,6 +103,27 @@ cellalign_lineage <- function(seurat_object) {
     
 }
 
-cellalign_lineage(FL_Cartilage)
-cellalign_lineage(HL_Cartilage)
-cellalign_lineage(PA_Osteoblasts)
+AC_lineage <- FL_Cartilage[ ,!is.na(FL_Cartilage$AC_lineage)]
+ZC_lineage <- FL_Cartilage[ ,!is.na(FL_Cartilage$ZC_lineage)]
+SC_lineage <- FL_Cartilage[ ,!is.na(FL_Cartilage$SC_lineage)]
+
+cellalign_lineage(AC_lineage)
+cellalign_lineage(ZC_lineage)
+cellalign_lineage(SC_lineage)
+
+AC_lineage <- HL_Cartilage[ ,!is.na(HL_Cartilage$AC_lineage)]
+ZC_lineage <- HL_Cartilage[ ,!is.na(HL_Cartilage$ZC_lineage)]
+SC_lineage <- HL_Cartilage[ ,!is.na(HL_Cartilage$SC_lineage)]
+
+cellalign_lineage(AC_lineage)
+cellalign_lineage(ZC_lineage)
+cellalign_lineage(SC_lineage)
+
+PA1_C_lineage <- PA_Osteoblasts[ ,!is.na(PA_Osteoblasts$PA1_C_lineage)]
+PA1_O_lineage <- PA_Osteoblasts[ ,!is.na(PA_Osteoblasts$PA1_O_lineage)]
+PA2_C_lineage <- PA_Osteoblasts[ ,!is.na(PA_Osteoblasts$PA2_C_lineage)]
+PA2_C_lineage <- PA2_C_lineage[ ,PA2_C_lineage$stage %in% c("E9.5", "E10.5", "E11.5")]
+
+cellalign_lineage(PA1_C_lineage)
+cellalign_lineage(PA1_O_lineage)
+cellalign_lineage(PA2_C_lineage)
