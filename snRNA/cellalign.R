@@ -18,7 +18,7 @@ Convert("/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/PA_Osteo
 PA_Osteoblasts <- LoadH5Seurat("PA_Osteoblasts.h5seurat")
 PA_Osteoblasts
 
-cellalign_lineage <- function(seurat_object) {
+cellalign_lineage <- function(seurat_object, lineage_name, outdir) {
     DefaultAssay(seurat_object) <- "RNA"
     
     H_lineage <- seurat_object[ ,seurat_object$genotype %in% "Human"]
@@ -100,30 +100,34 @@ cellalign_lineage <- function(seurat_object) {
     mappingRTNAlign <- mapRealDataGlobal(interRTNAlign, intTrajQuery = interScaledGlobalHumRTN$traj, realTrajQuery = trajHumRTN,
                                          intTrajRef = interScaledGlobalChRTN$traj, realTrajRef = trajChRTN)
     plotMapping(mappingRTNAlign)
-    
+
+    saveRDS(
+        list(Human = interScaledGlobalHumRTN, Chimp = interScaledGlobalChRTN),
+        file.path(outdir, paste0(lineage_name, "_interScaledGlobal_RTNs.rds"))
+    )
 }
 
 AC_lineage <- FL_Cartilage[ ,!is.na(FL_Cartilage$AC_lineage)]
 ZC_lineage <- FL_Cartilage[ ,!is.na(FL_Cartilage$ZC_lineage)]
 SC_lineage <- FL_Cartilage[ ,!is.na(FL_Cartilage$SC_lineage)]
 
-cellalign_lineage(AC_lineage)
-cellalign_lineage(ZC_lineage)
-cellalign_lineage(SC_lineage)
+cellalign_lineage(AC_lineage, "FL_AC", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/FL/")
+cellalign_lineage(ZC_lineage, "FL_ZC", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/FL/")
+cellalign_lineage(SC_lineage, "FL_SC", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/FL/"
 
 AC_lineage <- HL_Cartilage[ ,!is.na(HL_Cartilage$AC_lineage)]
 ZC_lineage <- HL_Cartilage[ ,!is.na(HL_Cartilage$ZC_lineage)]
 SC_lineage <- HL_Cartilage[ ,!is.na(HL_Cartilage$SC_lineage)]
 
-cellalign_lineage(AC_lineage)
-cellalign_lineage(ZC_lineage)
-cellalign_lineage(SC_lineage)
+cellalign_lineage(AC_lineage, "HL_AC", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/")
+cellalign_lineage(ZC_lineage, "HL_ZC", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/")
+cellalign_lineage(SC_lineage, "HL_SC", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/HL/")
 
 PA1_C_lineage <- PA_Osteoblasts[ ,!is.na(PA_Osteoblasts$PA1_C_lineage)]
 PA1_O_lineage <- PA_Osteoblasts[ ,!is.na(PA_Osteoblasts$PA1_O_lineage)]
 PA2_C_lineage <- PA_Osteoblasts[ ,!is.na(PA_Osteoblasts$PA2_C_lineage)]
 PA2_C_lineage <- PA2_C_lineage[ ,PA2_C_lineage$stage %in% c("E9.5", "E10.5", "E11.5")]
 
-cellalign_lineage(PA1_C_lineage)
-cellalign_lineage(PA1_O_lineage)
-cellalign_lineage(PA2_C_lineage)
+cellalign_lineage(PA1_C_lineage, "PA1_C", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/")
+cellalign_lineage(PA1_O_lineage, "PA1_O", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/")
+cellalign_lineage(PA2_C_lineage, "PA2_C", "/vast/palmer/scratch/noonan/yj345/new/CCR/integrated/Tissue/PA/")
