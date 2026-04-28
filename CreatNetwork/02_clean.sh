@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J atac_clean
+#SBATCH -J clean
 #SBATCH -t 1-00:00:00
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
