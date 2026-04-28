@@ -23,14 +23,12 @@ module load BEDTools
 mkdir -p "${BASE_DIR}/Peaks/${GROUP}_peak"
 mkdir -p "${BASE_DIR}/Final"
 
-# Decide whether this group is single-end ChIP-seq or paired-end ATAC-style data
 if [[ "$GROUP" =~ K27ac$ ]]; then
     MACS_FORMAT="BAM"
 else
     MACS_FORMAT="BAMPE"
 fi
 
-# Build list of available members
 AVAILABLE_REPS=()
 
 for rep in R1 R2; do
@@ -39,7 +37,6 @@ for rep in R1 R2; do
     fi
 done
 
-# Merge only if both R1 and R2 exist
 if [[ -f "${BASE_DIR}/Cleaned/${GROUP}R1_out/${GROUP}R1_callpeak.bam" && -f "${BASE_DIR}/Cleaned/${GROUP}R2_out/${GROUP}R2_callpeak.bam" ]]; then
     mkdir -p "${BASE_DIR}/Cleaned/${GROUP}merged_out"
     samtools merge "${BASE_DIR}/Cleaned/${GROUP}merged_out/${GROUP}merged_callpeak.bam" \
@@ -49,7 +46,6 @@ if [[ -f "${BASE_DIR}/Cleaned/${GROUP}R1_out/${GROUP}R1_callpeak.bam" && -f "${B
     AVAILABLE_REPS+=("merged")
 fi
 
-# Peak calling
 for rep in "${AVAILABLE_REPS[@]}"; do
     mkdir -p "${BASE_DIR}/Peaks/${GROUP}_peak/${rep}"
 
@@ -63,7 +59,6 @@ for rep in "${AVAILABLE_REPS[@]}"; do
         --keep-dup all
 done
 
-# BigWig conversion
 for rep in "${AVAILABLE_REPS[@]}"; do
     SAMPLE="${GROUP}${rep}"
     mkdir -p "${BASE_DIR}/Format/${SAMPLE}_format_bw"
@@ -89,7 +84,6 @@ for rep in "${AVAILABLE_REPS[@]}"; do
         "${BASE_DIR}/Final/${SAMPLE}.bw"
 done
 
-# BigBed conversion for MACS2 peaks
 for rep in "${AVAILABLE_REPS[@]}"; do
     grep -f "$CONTIGS_MOUSE" \
         "${BASE_DIR}/Peaks/${GROUP}_peak/${rep}/${GROUP}${rep}_macs2_peak_peaks.narrowPeak" \
