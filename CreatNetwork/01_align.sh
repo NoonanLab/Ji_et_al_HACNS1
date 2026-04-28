@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J atac_align
+#SBATCH -J align
 #SBATCH -t 1-00:00:00
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=10
@@ -18,7 +18,6 @@ module load Bowtie2
 
 mkdir -p "${BASE_DIR}/Aligned/${SAMPLE_ID}_alignment"
 
-# K27ac ChIP-seq samples: single-end, no trimming
 if [[ "$SAMPLE_ID" =~ ^(SRR4835044|SRR4835045|SRX3395791|SRR3950341|SRR3950342)$ ]]; then
     bowtie2 --local --very-sensitive --phred33 -p 10 \
         -x "$MM10_REF" \
@@ -26,7 +25,6 @@ if [[ "$SAMPLE_ID" =~ ^(SRR4835044|SRR4835045|SRX3395791|SRR3950341|SRR3950342)$
         -S "${BASE_DIR}/Aligned/${SAMPLE_ID}_alignment/${SAMPLE_ID}_bowtie2.sam" \
         &> "${BASE_DIR}/Aligned/${SAMPLE_ID}_alignment/${SAMPLE_ID}_bowtie2.txt"
 
-# ATAC-style samples: paired-end, use trimmed reads
 else
     bowtie2 --local --very-sensitive --no-mixed --no-discordant --phred33 -I 10 -X 700 -p 10 \
         -x "$MM10_REF" \
