@@ -23,7 +23,6 @@ echo "$GROUP Peak Calling begun:" && date
 mkdir -p "${BASE_DIR}/Peaks/${GROUP}_peak"
 mkdir -p "${BASE_DIR}/Final"
 
-# Peak calling for R1, R2, and merged
 for rep in R1 R2 merged; do
     mkdir -p "${BASE_DIR}/Peaks/${GROUP}_peak/${rep}"
     macs2 callpeak \
@@ -37,7 +36,6 @@ for rep in R1 R2 merged; do
 done
 echo "$GROUP Peak Calling finished:" && date
 
-# Conversion to BigWig
 for rep in R1 R2 merged; do
     SAMPLE="${GROUP}${rep}"
     echo "$SAMPLE Format Conversion begun:" && date
@@ -67,7 +65,6 @@ for rep in R1 R2 merged; do
     echo "$SAMPLE Format Conversion finished:" && date
 done
 
-# Convert Peaks to BigBed
 echo "$GROUP Peak Format Conversion begun:" && date
 for rep in R1 R2 merged; do
     grep -f "$CONTIGS_MOUSE" \
