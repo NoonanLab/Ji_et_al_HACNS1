@@ -13,7 +13,7 @@ conda activate TOBIAS
 GENOME="/gpfs/gibbs/project/noonan/yj345/makeHumanizedFasta/mm10.fa"
 MOTIFS="/gpfs/gibbs/project/noonan/yj345/mm10_fasta_gtf/JASPAR2024_CORE_non-redundant_pfms_jaspar.txt"
 ORIGIN="/vast/palmer/scratch/noonan/yj345/ATAC/motif2gene_mouse.tsv"
-BASE="/vast/palmer/scratch/noonan/yj345/ATAC"
+BASE="/vast/palmer/scratch/noonan/yj345/ATAC/TOBIAS"
 
 for tissue in FL HL P1 P2; do
 
