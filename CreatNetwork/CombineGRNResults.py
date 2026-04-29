@@ -33,7 +33,6 @@ def combine_one_tissue(tissue):
         dfs.append(df)
 
     all_edges = pd.concat(dfs, ignore_index=True)
-    print(f"{tissue}: total edge rows = {all_edges.shape[0]}")
 
     summary = (
         all_edges
@@ -48,11 +47,6 @@ def combine_one_tissue(tissue):
     n_runs = len(files)
     threshold = int(FREQ_CUTOFF * n_runs)
 
-    print(
-        f"{tissue}: {n_runs} runs; keeping edges with "
-        f"freq >= {threshold} (>= {FREQ_CUTOFF * 100:.0f}% of runs)"
-    )
-
     consensus = summary[summary["freq"] >= threshold].copy()
     consensus.sort_values("mean_importance", ascending=False, inplace=True)
 
@@ -62,11 +56,7 @@ def combine_one_tissue(tissue):
     )
 
     consensus.to_csv(out_file, sep="\t", index=False)
-
-    print(f"{tissue}: wrote consensus network with {consensus.shape[0]} edges to:")
-    print(f"  {out_file}")
-    print()
-
+    
 
 def main():
     for tissue in TISSUES:
