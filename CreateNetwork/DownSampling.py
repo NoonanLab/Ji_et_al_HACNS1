@@ -106,7 +106,7 @@ def run_one_tissue(tissue):
 
         out_loom = os.path.join(
             out_dir,
-            f"{tissue}_E10_magic_sub_{i + 1:02d}_3k.loom"
+            f"{tissue}_E10_magic_sub_{i + 1:02d}.loom"
         )
 
         lp.create(out_loom, X_T, row_attrs, col_attrs)
