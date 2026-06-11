@@ -74,6 +74,7 @@ DownSampling.py, runGRN.sh, and CombineGRNResults.py – Infer transcription fac
 
 Step 23
 Combine_grn_TOBIAS.R – Filter direct binding networks using high-confidence coexpression modules to retain transcription factor-target interactions.
+
 Step 24
 PermutationTest.R – Test whether genotype-shifted genes are enriched at specific downstream distances from Gbx2 in tissue-specific gene regulatory networks using two-tailed permutation testing.
 
