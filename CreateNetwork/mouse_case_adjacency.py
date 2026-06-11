@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# usage: python mouse_case_adjacency.py createnetwork_output/adjacency.txt \
-#                      > createnetwork_output/adjacency_mousecase.txt
 import sys, re
 
 inp = sys.argv[1] if len(sys.argv) > 1 else "-"
